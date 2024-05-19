@@ -2,7 +2,7 @@ plugins {
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
-    id "io.github.themrmilchmann.curseforge-publish" version "0.6.1"
+    id "me.shedaniel.unified-publishing" version "0.1.+"
 }
 
 version = mod_version
@@ -106,4 +106,22 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+unifiedPublishing {
+    project {
+        displayName = mod_name
+        version = mod_version
+        description = mod_description
+        releaseType = "alpha"
+        gameVersions = ["1.20.1"]
+        gameLoaders = ["forge"]
+
+        mainPublication tasks.jar
+
+        curseforge {
+            token = providers.gradleProperty("cf_api_token")
+            id = cf_project_id
+        }
+    }
 }
