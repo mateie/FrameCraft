@@ -55,10 +55,6 @@ public class Items {
     public static final RegistryObject<Item> TELLURIUM = ITEMS.register("tellurium",
             () -> new Item(new Item.Properties()));
 
-    // Logo Item
-    public static final RegistryObject<Item> MCFRAME_LOGO = ITEMS.register("mcframe_logo",
-            () -> new Item(new Item.Properties().stacksTo(1).setNoRepair()));
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

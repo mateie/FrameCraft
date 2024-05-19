@@ -14,7 +14,7 @@ public class CreativeModeTabs {
 
     public static final RegistryObject<net.minecraft.world.item.CreativeModeTab> MCFRAME_TAB = CREATIVE_MODE_TABS.register("mcframe_tab",
             () -> net.minecraft.world.item.CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(Items.MCFRAME_LOGO.get()))
+                    .icon(() -> new ItemStack(Items.FERRITE.get()))
                     .title(Component.translatable("creativetab.mcframe"))
                     .displayItems(((pParameters, pOutput) -> {
                         Items.ITEMS.getEntries().forEach((pItem) -> {
