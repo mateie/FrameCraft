@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
-public class ModBlockLootTables extends BlockLootSubProvider {
-    public ModBlockLootTables() {
+public class BlockLootTables extends BlockLootSubProvider {
+    public BlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 
