@@ -1,6 +1,6 @@
-package dev.mateie.mcframe.datagen;
+package dev.mateie.framecraft.datagen;
 
-import dev.mateie.mcframe.datagen.loot.BlockLootTables;
+import dev.mateie.framecraft.datagen.loot.BlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 

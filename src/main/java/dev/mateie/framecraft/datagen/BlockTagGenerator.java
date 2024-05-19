@@ -1,6 +1,6 @@
-package dev.mateie.mcframe.datagen;
+package dev.mateie.framecraft.datagen;
 
-import dev.mateie.mcframe.MCFrame;
+import dev.mateie.framecraft.FrameCraft;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -12,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 public class BlockTagGenerator extends BlockTagsProvider {
 
     public BlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, MCFrame.MOD_ID, existingFileHelper);
+        super(output, lookupProvider, FrameCraft.MOD_ID, existingFileHelper);
     }
 
     @Override

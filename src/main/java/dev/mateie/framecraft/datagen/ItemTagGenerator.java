@@ -1,6 +1,6 @@
-package dev.mateie.mcframe.datagen;
+package dev.mateie.framecraft.datagen;
 
-import dev.mateie.mcframe.MCFrame;
+import dev.mateie.framecraft.FrameCraft;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 public class ItemTagGenerator extends ItemTagsProvider {
 
     public ItemTagGenerator(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_, CompletableFuture<TagLookup<Block>> p_275322_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_275343_, p_275729_, p_275322_, MCFrame.MOD_ID, existingFileHelper);
+        super(p_275343_, p_275729_, p_275322_, FrameCraft.MOD_ID, existingFileHelper);
     }
 
     @Override

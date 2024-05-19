@@ -1,6 +1,6 @@
-package dev.mateie.mcframe.networking;
+package dev.mateie.framecraft.networking;
 
-import dev.mateie.mcframe.MCFrame;
+import dev.mateie.framecraft.FrameCraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkRegistry;
@@ -10,15 +10,15 @@ import net.minecraftforge.network.simple.SimpleChannel;
 public class Packets {
     private static SimpleChannel INSTANCE;
 
-    private static int packeId = 0;
+    private static int packetId = 0;
 
     private static int id() {
-        return packeId++;
+        return packetId++;
     }
 
     public static void register() {
         SimpleChannel net = NetworkRegistry.ChannelBuilder
-                .named(new ResourceLocation(MCFrame.MOD_ID, "messages"))
+                .named(new ResourceLocation(FrameCraft.MOD_ID, "messages"))
                 .networkProtocolVersion(() -> "1.0")
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)

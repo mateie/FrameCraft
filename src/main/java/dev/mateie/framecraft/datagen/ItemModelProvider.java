@@ -1,7 +1,7 @@
-package dev.mateie.mcframe.datagen;
+package dev.mateie.framecraft.datagen;
 
-import dev.mateie.mcframe.MCFrame;
-import dev.mateie.mcframe.item.Items;
+import dev.mateie.framecraft.FrameCraft;
+import dev.mateie.framecraft.item.Items;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ItemModelProvider extends net.minecraftforge.client.model.generators.ItemModelProvider {
     public ItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, MCFrame.MOD_ID, existingFileHelper);
+        super(output, FrameCraft.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -23,6 +23,6 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
         return withExistingParent(
                 item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(MCFrame.MOD_ID, "item/" + item.getId().getPath()));
+                new ResourceLocation(FrameCraft.MOD_ID, "item/" + item.getId().getPath()));
     }
 }

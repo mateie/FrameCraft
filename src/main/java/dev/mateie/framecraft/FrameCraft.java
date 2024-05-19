@@ -1,25 +1,25 @@
-package dev.mateie.mcframe;
+package dev.mateie.framecraft;
 
 import com.mojang.logging.LogUtils;
-import dev.mateie.mcframe.block.Blocks;
-import dev.mateie.mcframe.item.CreativeModeTabs;
-import dev.mateie.mcframe.item.Items;
-import dev.mateie.mcframe.networking.Packets;
+import dev.mateie.framecraft.block.Blocks;
+import dev.mateie.framecraft.item.CreativeModeTabs;
+import dev.mateie.framecraft.item.Items;
+import dev.mateie.framecraft.networking.Packets;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(MCFrame.MOD_ID)
-public class MCFrame {
+@Mod(FrameCraft.MOD_ID)
+public class FrameCraft {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "mcframe";
+    public static final String MOD_ID = "framecraft";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
-    public MCFrame() {
+    public FrameCraft() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         CreativeModeTabs.register(modEventBus);

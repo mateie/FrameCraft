@@ -1,7 +1,7 @@
-package dev.mateie.mcframe.block;
+package dev.mateie.framecraft.block;
 
-import dev.mateie.mcframe.MCFrame;
-import dev.mateie.mcframe.item.Items;
+import dev.mateie.framecraft.FrameCraft;
+import dev.mateie.framecraft.item.Items;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public class Blocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, MCFrame.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, FrameCraft.MOD_ID);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

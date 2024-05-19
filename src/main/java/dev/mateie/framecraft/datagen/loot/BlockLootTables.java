@@ -1,6 +1,6 @@
-package dev.mateie.mcframe.datagen.loot;
+package dev.mateie.framecraft.datagen.loot;
 
-import dev.mateie.mcframe.block.Blocks;
+import dev.mateie.framecraft.block.Blocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
