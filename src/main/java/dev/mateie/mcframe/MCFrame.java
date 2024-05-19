@@ -1,10 +1,10 @@
 package dev.mateie.mcframe;
 
 import com.mojang.logging.LogUtils;
-import dev.mateie.mcframe.block.ModBlocks;
-import dev.mateie.mcframe.item.ModCreativeModeTabs;
-import dev.mateie.mcframe.item.ModItems;
-import dev.mateie.mcframe.networking.ModPackets;
+import dev.mateie.mcframe.block.Blocks;
+import dev.mateie.mcframe.item.CreativeModeTabs;
+import dev.mateie.mcframe.item.Items;
+import dev.mateie.mcframe.networking.Packets;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -22,9 +22,9 @@ public class MCFrame {
     public MCFrame() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModCreativeModeTabs.register(modEventBus);
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
+        CreativeModeTabs.register(modEventBus);
+        Items.register(modEventBus);
+        Blocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
     }
@@ -34,6 +34,6 @@ public class MCFrame {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        ModPackets.register();
+        Packets.register();
     }
 }

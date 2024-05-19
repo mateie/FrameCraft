@@ -7,7 +7,7 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 
-public class ModPackets {
+public class Packets {
     private static SimpleChannel INSTANCE;
 
     private static int packeId = 0;

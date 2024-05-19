@@ -1,6 +1,6 @@
 package dev.mateie.mcframe.datagen.loot;
 
-import dev.mateie.mcframe.block.ModBlocks;
+import dev.mateie.mcframe.block.Blocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
@@ -21,6 +21,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return Blocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 }
