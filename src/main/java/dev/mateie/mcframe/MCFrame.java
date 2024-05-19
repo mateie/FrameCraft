@@ -1,13 +1,14 @@
 package dev.mateie.mcframe;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.MinecraftForge;
+import dev.mateie.mcframe.block.ModBlocks;
+import dev.mateie.mcframe.item.ModCreativeModeTabs;
+import dev.mateie.mcframe.item.ModItems;
+import dev.mateie.mcframe.networking.ModPackets;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(MCFrame.MOD_ID)
@@ -18,14 +19,21 @@ public class MCFrame {
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
-
     public MCFrame() {
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+        modEventBus.addListener(this::commonSetup);
     }
 
     public static Logger getLogger() {
         return LOGGER;
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        ModPackets.register();
     }
 }
